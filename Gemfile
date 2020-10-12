@@ -30,6 +30,7 @@ gem 'paperclip'
 gem 'sorcery'
 gem 'rails-i18n', '~> 6.0.0'
 gem 'bootstrap', '~> 5.0.0.alpha1'
+gem 'sprockets-rails'
 gem 'jquery-rails'
 
 # Use Active Storage variant

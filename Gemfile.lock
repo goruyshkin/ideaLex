@@ -295,6 +295,7 @@ DEPENDENCIES
   sass-rails (>= 6)
   selenium-webdriver
   sorcery
+  sprockets-rails
   turbolinks (~> 5)
   tzinfo-data
   web-console (>= 3.3.0)

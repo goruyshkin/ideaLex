@@ -1,15 +1,15 @@
-%h1 Listing authors
+%h1 Список авторов
 
-%table
+%table.table.table-striped
   %thead
     %tr
-      %th First name
-      %th Second name
-      %th Last name
-      %th Description
-      %th
-      %th
-      %th
+      %th{:scope => "col"} First name
+      %th{:scope => "col"} Second name
+      %th{:scope => "col"} Last name
+      %th{:scope => "col"} Description
+      %th{:scope => "col"}
+      %th{:scope => "col"}
+      %th{:scope => "col"}
 
   %tbody
     - @authors.each do |author|
