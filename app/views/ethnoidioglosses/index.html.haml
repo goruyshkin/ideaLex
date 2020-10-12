@@ -1,0 +1,31 @@
+%h1 Listing ethnoidioglosses
+
+%table
+  %thead
+    %tr
+      %th Word
+      %th Description
+      %th Status
+      %th Author
+      %th User
+      %th Book
+      %th
+      %th
+      %th
+
+  %tbody
+    - @ethnoidioglosses.each do |ethnoidiogloss|
+      %tr
+        %td= ethnoidiogloss.word
+        %td= ethnoidiogloss.description
+        %td= ethnoidiogloss.status
+        %td= ethnoidiogloss.author
+        %td= ethnoidiogloss.user
+        %td= ethnoidiogloss.book
+        %td= link_to 'Show', ethnoidiogloss
+        %td= link_to 'Edit', edit_ethnoidiogloss_path(ethnoidiogloss)
+        %td= link_to 'Destroy', ethnoidiogloss, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Ethnoidiogloss', new_ethnoidiogloss_path

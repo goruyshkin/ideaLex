@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Name:
+  = @notebook.name
+%p
+  %b Description:
+  = @notebook.description
+%p
+  %b User:
+  = @notebook.user
+
+= link_to 'Edit', edit_notebook_path(@notebook)
+\|
+= link_to 'Back', notebooks_path

@@ -1,0 +1,15 @@
+%p#notice= notice
+
+%p
+  %b Concordance:
+  = @concordance.concordance
+%p
+  %b Is it lemma:
+  = @concordance.is_it_lemma
+%p
+  %b Width:
+  = @concordance.width
+
+= link_to 'Edit', edit_concordance_path(@concordance)
+\|
+= link_to 'Back', concordances_path

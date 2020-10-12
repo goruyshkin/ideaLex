@@ -1,0 +1,2 @@
+class Concordance < ApplicationRecord
+end

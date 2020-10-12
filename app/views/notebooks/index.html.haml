@@ -1,0 +1,25 @@
+%h1 Listing notebooks
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Description
+      %th User
+      %th
+      %th
+      %th
+
+  %tbody
+    - @notebooks.each do |notebook|
+      %tr
+        %td= notebook.name
+        %td= notebook.description
+        %td= notebook.user
+        %td= link_to 'Show', notebook
+        %td= link_to 'Edit', edit_notebook_path(notebook)
+        %td= link_to 'Destroy', notebook, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Notebook', new_notebook_path

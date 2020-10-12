@@ -1,0 +1,24 @@
+%p#notice= notice
+
+%p
+  %b Word:
+  = @ethnoidiogloss.word
+%p
+  %b Description:
+  = @ethnoidiogloss.description
+%p
+  %b Status:
+  = @ethnoidiogloss.status
+%p
+  %b Author:
+  = @ethnoidiogloss.author
+%p
+  %b User:
+  = @ethnoidiogloss.user
+%p
+  %b Book:
+  = @ethnoidiogloss.book
+
+= link_to 'Edit', edit_ethnoidiogloss_path(@ethnoidiogloss)
+\|
+= link_to 'Back', ethnoidioglosses_path

@@ -1,0 +1,25 @@
+%h1 Listing concordances
+
+%table
+  %thead
+    %tr
+      %th Concordance
+      %th Is it lemma
+      %th Width
+      %th
+      %th
+      %th
+
+  %tbody
+    - @concordances.each do |concordance|
+      %tr
+        %td= concordance.concordance
+        %td= concordance.is_it_lemma
+        %td= concordance.width
+        %td= link_to 'Show', concordance
+        %td= link_to 'Edit', edit_concordance_path(concordance)
+        %td= link_to 'Destroy', concordance, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Concordance', new_concordance_path
