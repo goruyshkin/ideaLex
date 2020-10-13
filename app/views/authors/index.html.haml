@@ -1,12 +1,10 @@
 %h1 Список авторов
 
-%table.table.table-striped
+%table.table.table-striped.table-hover
   %thead
     %tr
-      %th{:scope => "col"} First name
-      %th{:scope => "col"} Second name
-      %th{:scope => "col"} Last name
-      %th{:scope => "col"} Description
+      %th{:scope => "col"} Фио
+      %th{:scope => "col"} Описание
       %th{:scope => "col"}
       %th{:scope => "col"}
       %th{:scope => "col"}
@@ -14,10 +12,8 @@
   %tbody
     - @authors.each do |author|
       %tr
-        %td= author.first_name
-        %td= author.second_name
-        %td= author.last_name
-        %td= author.description
+        %td= author.first_name + " " + author.second_name + " " + author.last_name
+        %td= author.description.slice(0..30)
         %td= link_to 'Show', author
         %td= link_to 'Edit', edit_author_path(author)
         %td= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' }

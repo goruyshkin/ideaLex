@@ -11,4 +11,10 @@
     = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
   %body
     = render "shared_partials/header"
-    = yield
+    .bg
+    %p.py-5.text-center
+    
+    .container
+      .card.border-0.shadow.my-5
+        .card-body.p-5
+          = yield
