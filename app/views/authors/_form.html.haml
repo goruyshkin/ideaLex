@@ -7,16 +7,16 @@
           %li= message
 
   .field
-    = f.label :first_name
-    = f.text_field :first_name
+    = f.label :Имя
+    = f.text_field :first_name, class: "form-control", type: "string", placeholder: "Имя"
   .field
-    = f.label :second_name
-    = f.text_field :second_name
+    = f.label :Фамилия
+    = f.text_field :second_name, class: "form-control", type: "string", placeholder: "Фамилия"
   .field
-    = f.label :last_name
-    = f.text_field :last_name
+    = f.label :Отчество
+    = f.text_field :last_name, class: "form-control", type: "string", placeholder: "Отчество"
   .field
-    = f.label :description
-    = f.text_area :description
+    = f.label :Описание
+    = f.text_area :description, class: "form-control", type: "text", placeholder: "Описание"
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить', class: "btn btn-light"

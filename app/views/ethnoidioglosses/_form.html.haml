@@ -7,22 +7,22 @@
           %li= message
 
   .field
-    = f.label :word
-    = f.text_field :word
+    = f.label :Слово
+    = f.text_field :word, class: "form-control", type: "string", placeholder: "Слово"
   .field
-    = f.label :description
-    = f.text_area :description
+    = f.label :Описание
+    = f.text_area :description, class: "form-control", type: "text", placeholder: "Описание"
   .field
-    = f.label :status
-    = f.number_field :status
+    = f.label :Статус
+    = f.number_field :status, class: "form-control", type: "integer", placeholder: "Статус"
   .field
-    = f.label :author
+    = f.label :Автор
     = f.text_field :author
   .field
     = f.label :user
     = f.text_field :user
   .field
-    = f.label :book
-    = f.text_field :book
+    = f.label :Книги
+    = f.text_field :books
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить', class: "btn btn-light"

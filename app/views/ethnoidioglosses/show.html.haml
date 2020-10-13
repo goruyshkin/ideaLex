@@ -1,24 +1,24 @@
 %p#notice= notice
 
-%p
-  %b Word:
+%p.text-center
+  %b Слово:
   = @ethnoidiogloss.word
 %p
-  %b Description:
+  %b Описание:
   = @ethnoidiogloss.description
 %p
-  %b Status:
+  %b Статус:
   = @ethnoidiogloss.status
 %p
-  %b Author:
+  %b Автор:
   = @ethnoidiogloss.author
 %p
   %b User:
   = @ethnoidiogloss.user
 %p
-  %b Book:
+  %b Книги:
   = @ethnoidiogloss.book
 
-= link_to 'Edit', edit_ethnoidiogloss_path(@ethnoidiogloss)
+= link_to 'Изменить', edit_ethnoidiogloss_path(@ethnoidiogloss), class: "btn btn-light"
 \|
-= link_to 'Back', ethnoidioglosses_path
+= link_to 'Назад', ethnoidioglosses_path, class: "btn btn-light"

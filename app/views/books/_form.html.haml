@@ -7,13 +7,13 @@
           %li= message
 
   .field
-    = f.label :name
-    = f.text_field :name
+    = f.label :Название
+    = f.text_field :name, class: "form-control", type: "string", placeholder: "Название"
   .field
-    = f.label :text
-    = f.text_area :text
+    = f.label :Текст
+    = f.text_area :text, class: "form-control", type: "text", placeholder: "Текст"
   .field
-    = f.label :author
-    = f.text_field :author
+    = f.label :Автор
+    = f.text_field :author, class: "form-control", type: "string", placeholder: "Автор"
   .actions
     = f.submit 'Save'

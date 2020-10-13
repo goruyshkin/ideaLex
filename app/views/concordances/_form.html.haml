@@ -7,13 +7,13 @@
           %li= message
 
   .field
-    = f.label :concordance
-    = f.text_area :concordance
+    = f.label :Конкорданс
+    = f.text_area :concordance, class: "form-control", type: "text", placeholder: "Конкорданс"
   .field
-    = f.label :is_it_lemma
-    = f.check_box :is_it_lemma
+    = f.label :Лемма?
+    = f.check_box :is_it_lemma, type: "checkbox"
   .field
-    = f.label :width
-    = f.number_field :width
+    = f.label :Ширина
+    = f.number_field :width, class: "form-control", type: "integer", placeholder: "ВВедите ширину (число)"
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить', class: "btn btn-light"

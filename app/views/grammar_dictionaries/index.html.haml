@@ -1,23 +1,23 @@
-%h1 Listing grammar_dictionaries
+%h1.text-center Список Грамматических словарей
 
-%table
+%table.table.table-hover
   %thead
     %tr
-      %th Dictionary
-      %th Book
-      %th
-      %th
-      %th
+      %th{:scope => "col"} Словарь
+      %th{:scope => "col"} Книги
+      %th{:scope => "col"}
+      %th{:scope => "col"}{:scope => "col"}
+      %th{:scope => "col"}
 
   %tbody
     - @grammar_dictionaries.each do |grammar_dictionary|
       %tr
         %td= grammar_dictionary.dictionary
         %td= grammar_dictionary.book
-        %td= link_to 'Show', grammar_dictionary
-        %td= link_to 'Edit', edit_grammar_dictionary_path(grammar_dictionary)
-        %td= link_to 'Destroy', grammar_dictionary, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Просмотр', grammar_dictionary, class: "btn btn-light"
+        %td= link_to 'Редактировать', edit_grammar_dictionary_path(grammar_dictionary), class: "btn btn-light"
+        %td= link_to 'Удалить', grammar_dictionary, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-light"
 
 %br
 
-= link_to 'New Grammar dictionary', new_grammar_dictionary_path
+= link_to 'Добавить грамматический словарь', new_grammar_dictionary_path, class: "btn btn-light"

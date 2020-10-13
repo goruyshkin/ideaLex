@@ -1,18 +1,13 @@
 %p#notice= notice
 
+%p.text-center 
+  %b
+    = @author.first_name + " " + @author.second_name + " " + @author.last_name
+
 %p
-  %b First name:
-  = @author.first_name
-%p
-  %b Second name:
-  = @author.second_name
-%p
-  %b Last name:
-  = @author.last_name
-%p
-  %b Description:
+  %b Описание:
   = @author.description
 
-= link_to 'Edit', edit_author_path(@author)
+= link_to 'Изменить', edit_author_path(@author), class: "btn btn-light"
 \|
-= link_to 'Back', authors_path
+= link_to 'Назад', authors_path, class: "btn btn-light"

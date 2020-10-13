@@ -1,12 +1,12 @@
 %p#notice= notice
 
 %p
-  %b Text:
+  %b Частотник:
   = @frequency_vocabulary.text
 %p
-  %b Book:
+  %b Книги:
   = @frequency_vocabulary.book
 
-= link_to 'Edit', edit_frequency_vocabulary_path(@frequency_vocabulary)
+= link_to 'Изменить', edit_frequency_vocabulary_path(@frequency_vocabulary), class: "btn btn-light"
 \|
-= link_to 'Back', frequency_vocabularies_path
+= link_to 'Назад', frequency_vocabularies_path, class: "btn btn-light"

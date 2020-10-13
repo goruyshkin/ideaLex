@@ -1,6 +1,6 @@
-%h1 Список авторов
+%h1.text-center Список авторов
 
-%table.table.table-striped.table-hover
+%table.table.table-hover
   %thead
     %tr
       %th{:scope => "col"} Фио
@@ -14,10 +14,10 @@
       %tr
         %td= author.first_name + " " + author.second_name + " " + author.last_name
         %td= author.description.slice(0..30)
-        %td= link_to 'Show', author
-        %td= link_to 'Edit', edit_author_path(author)
-        %td= link_to 'Destroy', author, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Просмотр', author, class: "btn btn-light"
+        %td= link_to 'Редактировать', edit_author_path(author), class: "btn btn-light"
+        %td= link_to 'Удалить', author, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-light"
 
 %br
 
-= link_to 'New Author', new_author_path
+= link_to 'Добавить автора', new_author_path, class: "btn btn-light"

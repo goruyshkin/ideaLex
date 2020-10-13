@@ -7,10 +7,10 @@
           %li= message
 
   .field
-    = f.label :dictionary
-    = f.text_area :dictionary
+    = f.label :Грамматический словарь
+    = f.text_area :dictionary, class: "form-control", type: "text", placeholder: "Грамматический словарь"
   .field
-    = f.label :book
+    = f.label :Книги
     = f.text_field :book
   .actions
     = f.submit 'Save'

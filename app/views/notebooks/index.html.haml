@@ -1,21 +1,20 @@
-%h1 Listing notebooks
+%h1.text-center Блокноты
 
-%table
+%table.table.table-striped
   %thead
     %tr
-      %th Name
-      %th Description
-      %th User
-      %th
-      %th
-      %th
-
+      %th{:scope => "col"} Название
+      %th{:scope => "col"} Описание
+      -# %th{:scope => "col"} User
+      %th{:scope => "col"}
+      %th{:scope => "col"}
+      %th{:scope => "col"}
   %tbody
     - @notebooks.each do |notebook|
       %tr
         %td= notebook.name
         %td= notebook.description
-        %td= notebook.user
+        -# %td= notebook.user
         %td= link_to 'Show', notebook
         %td= link_to 'Edit', edit_notebook_path(notebook)
         %td= link_to 'Destroy', notebook, method: :delete, data: { confirm: 'Are you sure?' }

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_10_12_122318) do
+ActiveRecord::Schema.define(version: 2020_10_13_163022) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,6 +42,16 @@ ActiveRecord::Schema.define(version: 2020_10_12_122318) do
     t.index ["author_id"], name: "index_books_on_author_id"
   end
 
+  create_table "comments", force: :cascade do |t|
+    t.text "comment"
+    t.bigint "user_id", null: false
+    t.bigint "ethnoidiogloss_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ethnoidiogloss_id"], name: "index_comments_on_ethnoidiogloss_id"
+    t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
   create_table "concordance_books", force: :cascade do |t|
     t.bigint "concordance_id", null: false
     t.bigint "book_id", null: false
@@ -57,6 +67,15 @@ ActiveRecord::Schema.define(version: 2020_10_12_122318) do
     t.integer "width"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "eig_status_votes", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "ethnoidiogloss_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["ethnoidiogloss_id"], name: "index_eig_status_votes_on_ethnoidiogloss_id"
+    t.index ["user_id"], name: "index_eig_status_votes_on_user_id"
   end
 
   create_table "ethnoidioglosses", force: :cascade do |t|
@@ -119,8 +138,12 @@ ActiveRecord::Schema.define(version: 2020_10_12_122318) do
   add_foreign_key "book_eigs", "books"
   add_foreign_key "book_eigs", "ethnoidioglosses"
   add_foreign_key "books", "authors"
+  add_foreign_key "comments", "ethnoidioglosses"
+  add_foreign_key "comments", "users"
   add_foreign_key "concordance_books", "books"
   add_foreign_key "concordance_books", "concordances"
+  add_foreign_key "eig_status_votes", "ethnoidioglosses"
+  add_foreign_key "eig_status_votes", "users"
   add_foreign_key "ethnoidioglosses", "authors"
   add_foreign_key "ethnoidioglosses", "books"
   add_foreign_key "ethnoidioglosses", "users"

@@ -1,15 +1,15 @@
 %p#notice= notice
 
-%p
-  %b Concordance:
+%p.text-center 
+  %b Конкорданс:
   = @concordance.concordance
 %p
-  %b Is it lemma:
+  %b Лемма?:
   = @concordance.is_it_lemma
 %p
-  %b Width:
+  %b Ширина:
   = @concordance.width
 
-= link_to 'Edit', edit_concordance_path(@concordance)
+= link_to 'Изменить', edit_concordance_path(@concordance), class: "btn btn-light"
 \|
-= link_to 'Back', concordances_path
+= link_to 'Назад', concordances_path, class: "btn btn-light"

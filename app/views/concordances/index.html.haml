@@ -1,14 +1,14 @@
-%h1 Listing concordances
+%h1.text-center Список конкордансов
 
-%table
+%table.table.table-striped.table-hover
   %thead
     %tr
-      %th Concordance
-      %th Is it lemma
-      %th Width
-      %th
-      %th
-      %th
+      %th{:scope => "col"} Конкорданс
+      %th{:scope => "col"} Лемма?
+      %th{:scope => "col"} Ширина
+      %th{:scope => "col"}
+      %th{:scope => "col"}
+      %th{:scope => "col"}
 
   %tbody
     - @concordances.each do |concordance|
@@ -16,10 +16,10 @@
         %td= concordance.concordance
         %td= concordance.is_it_lemma
         %td= concordance.width
-        %td= link_to 'Show', concordance
-        %td= link_to 'Edit', edit_concordance_path(concordance)
-        %td= link_to 'Destroy', concordance, method: :delete, data: { confirm: 'Are you sure?' }
+        %td= link_to 'Просмотреть', concordance, class: "btn btn-light"
+        %td= link_to 'Редактировать', edit_concordance_path(concordance), class: "btn btn-light"
+        %td= link_to 'Удалить', concordance, method: :delete, data: { confirm: 'Вы уверены?' }, class: "btn btn-light"
 
 %br
 
-= link_to 'New Concordance', new_concordance_path
+= link_to 'Добавить конкорданс', new_concordance_path, class: "btn btn-light"
