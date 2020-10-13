@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'search_engine/grammar_dictionaries', to: 'search_engine#grammar_dictionaries', as: 'search_engine_dictionaries'
   
   
-
+  # get 'welcome/testpage'
   get 'welcome/index'
   root 'welcome#index'
   

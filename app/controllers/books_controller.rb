@@ -25,7 +25,10 @@ class BooksController < ApplicationController
   # POST /books.json
   def create
     @book = Book.new(book_params)
-
+    @book.text = params[:book][:book_file].tempfile.read
+    if book_params[:name].empty?
+      @book.name = params[:book][:book_file].original_filename.split(".")[0]
+    end
     respond_to do |format|
       if @book.save
         format.html { redirect_to @book, notice: 'Book was successfully created.' }

@@ -8,12 +8,12 @@
 
   .field
     = f.label :Название
-    = f.text_field :name, class: "form-control", type: "string", placeholder: "Название"
+    = f.text_field :name, class: "form-control", type: "string", placeholder: "Название", id: "inputGroupFile01"
   .field
-    = f.label :Текст
-    = f.text_area :text, class: "form-control", type: "text", placeholder: "Текст"
+    = f.label :Файл
+    = f.file_field :book_file, class: "form-control", type: "file"
   .field
     = f.label :Автор
     = f.text_field :author, class: "form-control", type: "string", placeholder: "Автор"
   .actions
-    = f.submit 'Save'
+    = f.submit 'Сохранить', class: "btn btn-light"

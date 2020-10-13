@@ -1,7 +1,6 @@
-%h1 Editing book
-
+%h1.text-center Редактировать книгу
 = render 'form'
 
-= link_to 'Show', @book
+= link_to 'Просмотр', @book, class: "btn btn-light"
 \|
-= link_to 'Back', books_path
+= link_to 'Назад', books_path, class: "btn btn-light"

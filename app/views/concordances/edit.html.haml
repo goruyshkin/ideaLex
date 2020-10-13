@@ -1,7 +1,7 @@
-%h1 Editing concordance
+%h1.text-center Редактировать конкорданс
 
 = render 'form'
 
-= link_to 'Show', @concordance
+= link_to 'Просмотр', @concordance, class: "btn btn-light"
 \|
-= link_to 'Back', concordances_path
+= link_to 'Назад', concordances_path, class: "btn btn-light"
