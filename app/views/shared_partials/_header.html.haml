@@ -9,20 +9,20 @@
       -#     Home
       -#     %span.sr-only (current)
       %li.nav-item
-        %a.nav-link{:href => "authors"} Авторы
+        %a.nav-link{:href => authors_path} Авторы
       %li.nav-item
-        %a.nav-link{:href => "books"} Книги
+        %a.nav-link{:href => books_path} Книги
       %li.nav-item
-        %a.nav-link{:href => "ethnoidioglosses"} Этноидиоглоссарий
+        %a.nav-link{:href => ethnoidioglosses_path} Этноидиоглоссарий
       %li.nav-item.dropdown
         %a#navbarDropdown.nav-link.dropdown-toggle{"aria-expanded" => "false", "aria-haspopup" => "true", "data-toggle" => "dropdown", :href => "#", :role => "button"}
           Исследования
         .dropdown-menu{"aria-labelledby" => "navbarDropdown"}
-          %a.dropdown-item{:href => "grammar_dictionaries"} Грамматический словарь
-          %a.dropdown-item{:href => "frequency_vocabularies"} Частотный словник
-          %a.dropdown-item{:href => "concordances"} Конкордансы
+          %a.dropdown-item{:href => grammar_dictionaries_path} Грамматический словарь
+          %a.dropdown-item{:href => frequency_vocabularies_path} Частотный словник
+          %a.dropdown-item{:href => concordances_path} Конкордансы
           .dropdown-divider
-          %a.dropdown-item{:href => "notebooks"} Блокнот
+          %a.dropdown-item{:href => notebooks_path} Блокнот
       %li.nav-item
         %a.nav-link.disabled{"aria-disabled" => "true", :href => "#", :tabindex => "-1"} Disabled
     = form_tag search_engine_index_path, method: :get, role: "search", class: "form-inline my-2 my-lg-0 " do

@@ -15,14 +15,27 @@
   .field
     = f.label :Статус
     = f.number_field :status, class: "form-control", type: "integer", placeholder: "Статус"
-  .field
-    = f.label :Автор
-    = f.text_field :author
-  .field
-    = f.label :user
-    = f.text_field :user
-  .field
-    = f.label :Книги
-    = f.text_field :books
+  .control-group
+    = f.label :Автор, class: 'control-label'
+    .controls
+      = collection_select( :book, :author_id, Author.all, :id, :name_with_initial, {  }, { :multiple => false, class: "form-control"})
+
+  .control-group
+    = f.label :Специалист, class: 'control-label'
+    .controls
+      = collection_select( :ethnoidiogloss, :user_id, User.all, :id, :name_with_initial, {  }, { :multiple => false, class: "form-control"})
+
+  
+  -# .field
+  -#   = f.label :user
+  -#   = f.text_field :user
+  .control-group
+    = f.label :Книги, class: 'control-label'
+    .controls
+      = collection_select( :ethnoidiogloss, :book_id, Book.all, :id, :name, {  }, { :multiple => false, class: "form-control"})
+
+    -# .field
+    -#   = f.label :Книги
+    -#   = f.text_field :books
   .actions
     = f.submit 'Сохранить', class: "btn btn-light"

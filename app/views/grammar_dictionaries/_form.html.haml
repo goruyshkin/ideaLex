@@ -7,10 +7,11 @@
           %li= message
 
   .field
-    = f.label :Грамматический словарь
+    = f.label :"Грамматический словарь"
     = f.text_area :dictionary, class: "form-control", type: "text", placeholder: "Грамматический словарь"
-  .field
-    = f.label :Книги
-    = f.text_field :book
+  .control-group
+    = f.label :Книги, class: 'control-label'
+    .controls
+      = collection_select( :ethnoidiogloss, :book_id, Book.all, :id, :name, {  }, { :multiple => false, class: "form-control"})
   .actions
     = f.submit 'Сохранить', class: "btn btn-light"

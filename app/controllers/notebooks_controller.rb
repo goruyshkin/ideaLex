@@ -25,7 +25,7 @@ class NotebooksController < ApplicationController
   # POST /notebooks.json
   def create
     @notebook = Notebook.new(notebook_params)
-
+    @notenote.user_id = session[:user_id]
     respond_to do |format|
       if @notebook.save
         format.html { redirect_to @notebook, notice: 'Notebook was successfully created.' }

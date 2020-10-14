@@ -1,7 +1,7 @@
-%h1 Editing notebook
+%h1.text-center Редактировать Блокнот
 
 = render 'form'
 
-= link_to 'Show', @notebook
+= link_to 'Просмотр', @notebook, class: "btn btn-light"
 \|
-= link_to 'Back', notebooks_path
+= link_to 'Назад', notebooks_path, class: "btn btn-light"

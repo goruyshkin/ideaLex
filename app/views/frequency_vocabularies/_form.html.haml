@@ -9,8 +9,9 @@
   .field
     = f.label :Частотник
     = f.text_area :text, class: "form-control", type: "string", placeholder: "Частотник"
-  .field
-    = f.label :Книги
-    = f.text_field :book, class: "form-control", type: "string", placeholder: "Книги"
+  .control-group
+    = f.label :Книги, class: 'control-label'
+    .controls
+      = collection_select( :ethnoidiogloss, :book_id, Book.all, :id, :name, {  }, { :multiple => false, class: "form-control"})
   .actions
     = f.submit 'Сохранить', class: "btn btn-light"

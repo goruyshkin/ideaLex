@@ -1,15 +1,15 @@
 %p#notice= notice
 
-%p
-  %b Name:
+%p.text-center 
+  %b Название:
   = @notebook.name
 %p
-  %b Description:
+  %b Содержание:
   = @notebook.description
-%p
-  %b User:
-  = @notebook.user
+-# %p
+-#   %b User:
+-#   = @notebook.user
 
-= link_to 'Edit', edit_notebook_path(@notebook)
+= link_to 'Редактировать', edit_notebook_path(@notebook), class: "btn btn-light"
 \|
-= link_to 'Back', notebooks_path
+= link_to 'Назад', notebooks_path, class: "btn btn-light"

@@ -3,6 +3,7 @@
 %table.table.table-striped.table-hover
   %thead
     %tr
+      %th{:scope => "col"} Слово
       %th{:scope => "col"} Конкорданс
       %th{:scope => "col"} Лемма?
       %th{:scope => "col"} Ширина
@@ -13,6 +14,7 @@
   %tbody
     - @concordances.each do |concordance|
       %tr
+        %td= concordance.word
         %td= concordance.concordance
         %td= concordance.is_it_lemma
         %td= concordance.width

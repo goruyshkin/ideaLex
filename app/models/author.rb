@@ -9,4 +9,8 @@ class Author < ApplicationRecord
     validates :description, presence: true
 
     include PgSearch::Model
+
+    def name_with_initial
+        "#{second_name} #{first_name.first}. #{last_name.first}."
+    end
 end
